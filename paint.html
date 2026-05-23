@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bright Coat Painting Co. — Professional Painting Services</title>
+<meta name="description" content="Bright Coat Painting Co. — Professional interior and exterior painting. Licensed, insured, and backed by a satisfaction guarantee. Free estimates.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #ffffff;
+  --off: #f8f7f4;
+  --off2: #f0ede6;
+  --off3: #e8e3d8;
+  --ink: #1a1814;
+  --ink2: #2e2b24;
+  --ink3: #5a5750;
+  --ink4: #9a9790;
+  --blue: #2c5f8a;
+  --blue2: rgba(44,95,138,0.08);
+  --blue3: rgba(44,95,138,0.15);
+  --sage: #6b8c6b;
+  --sage2: rgba(107,140,107,0.1);
+  --warm: #c8a96e;
+  --warm2: rgba(200,169,110,0.12);
+  --border: rgba(26,24,20,0.08);
+  --border2: rgba(26,24,20,0.15);
+  --shadow: 0 2px 8px rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.07);
+  --shadow2: 0 4px 20px rgba(0,0,0,0.08), 0 20px 60px rgba(0,0,0,0.1);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--ink); font-family: var(--sans); overflow-x: hidden; }
+
+/* DEMO BANNER */
+.demo-banner { background: var(--blue); padding: 10px 2rem; text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--white); position: sticky; top: 0; z-index: 300; }
+.demo-banner a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+
+/* NAV */
+.nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 37px; z-index: 200; }
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+.nav-logo-icon { width: 36px; height: 36px; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.nav-logo-text { }
+.nav-logo-name { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: 0.01em; }
+.nav-logo-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; color: var(--ink4); text-transform: uppercase; margin-top: 1px; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-link { font-size: 13px; color: var(--ink3); text-decoration: none; transition: color 0.15s; font-weight: 400; }
+.nav-link:hover { color: var(--blue); }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-phone { font-family: var(--mono); font-size: 13px; color: var(--ink2); letter-spacing: 0.04em; }
+.nav-cta { font-size: 13px; font-weight: 600; padding: 10px 22px; background: var(--blue); color: var(--white); text-decoration: none; transition: all 0.2s; }
+.nav-cta:hover { background: #245080; }
+
+/* HERO — SPLIT LAYOUT */
+.hero { min-height: 92vh; display: grid; grid-template-columns: 1fr 1fr; }
+.hero-left { background: var(--off); display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 4rem; position: relative; overflow: hidden; }
+.hero-left-accent { position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--blue), var(--sage)); }
+.hero-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--blue); }
+.hero-title { font-family: var(--serif); font-size: clamp(44px, 5.5vw, 78px); font-weight: 400; line-height: 1; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.01em; }
+.hero-title em { font-style: italic; color: var(--blue); display: block; }
+.hero-sub { font-size: 16px; line-height: 1.85; color: var(--ink3); font-weight: 300; max-width: 420px; margin-bottom: 2.5rem; }
+.hero-sub strong { color: var(--ink); font-weight: 500; }
+.hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.btn { font-size: 13px; font-weight: 600; padding: 14px 30px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-blue { background: var(--blue); color: var(--white); }
+.btn-blue:hover { background: #245080; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(44,95,138,0.25); }
+.btn-outline { background: transparent; color: var(--ink2); border: 1px solid var(--border2); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.hero-trust { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink4); font-weight: 400; }
+.trust-icon { color: var(--sage); font-size: 13px; }
+.hero-right { position: relative; overflow: hidden; }
+.hero-img-main { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-badge { position: absolute; bottom: 2.5rem; left: -1rem; background: var(--white); border: 1px solid var(--border); padding: 1.25rem 1.5rem; box-shadow: var(--shadow2); max-width: 220px; }
+.hero-badge-num { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--blue); line-height: 1; }
+.hero-badge-label { font-size: 12px; color: var(--ink3); font-weight: 300; margin-top: 3px; line-height: 1.4; }
+
+/* SERVICES STRIP */
+.services-strip { background: var(--blue); padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.strip-item { padding: 2rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.1); text-align: center; transition: background 0.2s; cursor: default; }
+.strip-item:last-child { border-right: none; }
+.strip-item:hover { background: rgba(255,255,255,0.05); }
+.strip-icon { font-size: 26px; margin-bottom: 0.6rem; display: block; }
+.strip-name { font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--white); margin-bottom: 3px; }
+.strip-desc { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 300; letter-spacing: 0.03em; }
+
+/* SECTION */
+.section { padding: 7rem 2.5rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+.section-heading { font-family: var(--serif); font-size: clamp(36px, 4vw, 58px); font-weight: 400; line-height: 1.05; color: var(--ink); margin-bottom: 0.75rem; }
+.section-heading em { font-style: italic; color: var(--blue); }
+.section-sub { font-size: 15px; color: var(--ink3); font-weight: 300; line-height: 1.75; max-width: 540px; margin-bottom: 3.5rem; }
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* BEFORE/AFTER */
+.ba-bg { background: var(--off); }
+.ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.ba-card { background: var(--white); overflow: hidden; box-shadow: var(--shadow); transition: all 0.25s; }
+.ba-card:hover { transform: translateY(-4px); box-shadow: var(--shadow2); }
+.ba-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.ba-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.ba-label-row { display: grid; grid-template-columns: 1fr 1fr; background: var(--off2); }
+.ba-label { padding: 6px 12px; font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; }
+.ba-label.before { color: var(--ink4); border-right: 1px solid var(--border); }
+.ba-label.after { color: var(--blue); text-align: right; }
+.ba-body { padding: 1.25rem; }
+.ba-room { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--ink); margin-bottom: 3px; }
+.ba-detail { font-size: 12px; color: var(--ink4); font-weight: 300; }
+
+/* COLOR SWATCHES */
+.swatches-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.swatches-text { }
+.swatches-lead { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--ink2); margin-bottom: 1.5rem; line-height: 1.6; }
+.swatches-body { font-size: 15px; line-height: 1.85; color: var(--ink3); font-weight: 300; margin-bottom: 2rem; }
+.swatches-body strong { color: var(--ink2); font-weight: 500; }
+.swatches-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.swatch { }
+.swatch-color { height: 80px; width: 100%; display: block; transition: transform 0.2s; }
+.swatch:hover .swatch-color { transform: scale(1.03); }
+.swatch-name { font-size: 10px; color: var(--ink4); margin-top: 6px; font-weight: 300; }
+
+/* PROCESS — HORIZONTAL TIMELINE */
+.process-bg { background: var(--ink); }
+.process-tag { color: var(--warm) !important; }
+.process-heading { color: var(--white) !important; }
+.process-heading em { color: var(--warm) !important; }
+.process-sub { color: rgba(255,255,255,0.45) !important; }
+.process-timeline { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+.process-timeline::before { content: ''; position: absolute; top: 24px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, var(--warm), rgba(200,169,110,0.2)); }
+.process-step { text-align: center; padding: 0 1rem; position: relative; }
+.process-dot { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); border: 2px solid var(--warm); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; position: relative; z-index: 1; font-family: var(--serif); font-size: 18px; color: var(--warm); font-weight: 400; }
+.process-name { font-family: var(--serif); font-size: 16px; font-weight: 400; color: var(--white); margin-bottom: 0.5rem; }
+.process-desc { font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.4); font-weight: 300; }
+
+/* WHY US */
+.why-bg { background: var(--off); }
+.why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.why-img-wrap { position: relative; }
+.why-img { width: 100%; height: 520px; object-fit: cover; display: block; }
+.why-img-card { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--white); border: 1px solid var(--border); padding: 1.5rem; box-shadow: var(--shadow2); max-width: 200px; text-align: center; }
+.why-img-card-num { font-family: var(--serif); font-size: 42px; color: var(--sage); font-weight: 400; line-height: 1; }
+.why-img-card-label { font-size: 12px; color: var(--ink3); font-weight: 300; margin-top: 4px; line-height: 1.4; }
+.why-right { }
+.why-list { display: flex; flex-direction: column; gap: 0; }
+.why-item { padding: 1.75rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1.5rem; }
+.why-item:first-child { padding-top: 0; }
+.why-item:last-child { border-bottom: none; padding-bottom: 0; }
+.why-icon-wrap { width: 44px; height: 44px; background: var(--blue2); border: 1px solid var(--blue3); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.why-content { }
+.why-name { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem; }
+.why-text { font-size: 14px; line-height: 1.75; color: var(--ink3); font-weight: 300; }
+
+/* REVIEWS */
+.reviews-layout { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+.reviews-left { position: sticky; top: 120px; }
+.reviews-rating-big { font-family: var(--serif); font-size: 80px; font-weight: 300; color: var(--ink); line-height: 1; }
+.reviews-stars { color: var(--warm); font-size: 20px; letter-spacing: 3px; margin-bottom: 0.5rem; }
+.reviews-count { font-size: 13px; color: var(--ink4); font-weight: 300; margin-bottom: 2rem; }
+.reviews-platforms { display: flex; flex-direction: column; gap: 0.75rem; }
+.review-platform { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: var(--off); border: 1px solid var(--border); }
+.review-platform-name { font-size: 13px; font-weight: 500; color: var(--ink2); }
+.review-platform-count { font-size: 11px; color: var(--ink4); margin-top: 1px; }
+.review-platform-stars { color: var(--warm); font-size: 11px; margin-left: auto; }
+.reviews-right { display: flex; flex-direction: column; gap: 1.25rem; }
+.review-card { background: var(--off); border: 1px solid var(--border); padding: 2rem; transition: all 0.2s; }
+.review-card:hover { background: var(--off2); }
+.review-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+.review-author { font-weight: 600; font-size: 14px; color: var(--ink); }
+.review-meta { font-size: 11px; color: var(--ink4); margin-top: 2px; font-weight: 300; }
+.review-stars { color: var(--warm); font-size: 12px; letter-spacing: 2px; flex-shrink: 0; }
+.review-text { font-size: 14px; line-height: 1.85; color: var(--ink2); font-weight: 300; font-style: italic; }
+
+/* CONTACT — TOP, NOT BOTTOM */
+.contact-bg { background: var(--blue); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-left { }
+.contact-tag { color: rgba(255,255,255,0.5) !important; }
+.contact-tag::after { background: rgba(255,255,255,0.3) !important; }
+.contact-heading { font-family: var(--serif); font-size: clamp(38px,4vw,58px); font-weight: 400; color: var(--white); line-height: 1.05; margin-bottom: 1rem; }
+.contact-heading em { font-style: italic; color: rgba(255,255,255,0.6); }
+.contact-sub { font-size: 15px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.75; margin-bottom: 2.5rem; }
+.contact-details { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+.cdetail { display: flex; gap: 1rem; align-items: flex-start; }
+.cdetail-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.cdetail-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 3px; }
+.cdetail-value { font-size: 15px; color: var(--white); font-weight: 400; }
+.guarantee-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; }
+.guarantee-title { font-family: var(--serif); font-size: 20px; color: var(--white); margin-bottom: 6px; }
+.guarantee-text { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 300; line-height: 1.65; }
+.contact-right { background: var(--white); padding: 2.5rem; }
+.form-title { font-family: var(--serif); font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 0.4rem; }
+.form-subtitle { font-size: 13px; color: var(--ink4); font-weight: 300; margin-bottom: 2rem; }
+.form-group { margin-bottom: 1rem; }
+.form-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink3); display: block; margin-bottom: 6px; }
+.form-input { width: 100%; background: var(--off); border: 1px solid var(--border2); color: var(--ink); font-family: var(--sans); font-size: 14px; padding: 12px 14px; outline: none; transition: border-color 0.15s; font-weight: 300; }
+.form-input:focus { border-color: var(--blue); background: var(--white); }
+.form-input::placeholder { color: var(--ink4); }
+textarea.form-input { min-height: 100px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-submit { width: 100%; padding: 15px; background: var(--blue); color: var(--white); border: none; font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem; }
+.form-submit:hover { background: #245080; }
+.demo-toast { display: none; background: var(--off); border: 1px solid var(--border2); color: var(--ink3); padding: 0.75rem 1rem; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-align: center; margin-top: 0.75rem; }
+.demo-toast.show { display: block; }
+
+/* FOOTER */
+.footer { background: var(--ink); padding: 4rem 2.5rem 2rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
+.footer-logo-name { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--white); }
+.footer-logo-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.footer-body { font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 300; line-height: 1.7; margin-top: 1rem; }
+.footer-col-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-link { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-link:hover { color: rgba(255,255,255,0.7); }
+.footer-contact-item { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 0.6rem; font-weight: 300; display: flex; gap: 8px; }
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-family: var(--mono); font-size: 9px; color: rgba(255,255,255,0.2); }
+
+/* KODA BADGE */
+.koda-badge { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--white); border: 1px solid var(--border2); padding: 8px 16px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: var(--ink3); text-decoration: none; z-index: 999; box-shadow: var(--shadow); transition: all 0.15s; }
+.koda-badge:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .swatches-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .why-layout { grid-template-columns: 1fr; }
+  .why-img-wrap { display: none; }
+  .reviews-layout { grid-template-columns: 1fr; }
+  .reviews-left { position: relative; top: auto; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 350px; }
+  .hero-badge { display: none; }
+  .services-strip { grid-template-columns: 1fr 1fr; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .process-timeline { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-timeline::before { display: none; }
+  .contact-layout { grid-template-columns: 1fr; gap: 0; }
+  .nav-links, .nav-phone { display: none; }
+  .section { padding: 5rem 1.5rem; }
+  .nav { padding: 0 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .services-strip { grid-template-columns: 1fr; }
+  .swatches-grid { grid-template-columns: repeat(4, 1fr); }
+  .process-timeline { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">⚡ EXAMPLE SITE — Built by <a href="https://kodawebco.com" target="_blank">Koda Web Co</a> · Want one like this? Let's talk.</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🖌</div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-name">Bright Coat Painting</div>
+      <div class="nav-logo-tag">Licensed & Insured · Est. 2008</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#work" class="nav-link">Our Work</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#estimate" class="nav-link">Free Estimate</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-phone">(304) 555-0284</div>
+    <a href="#estimate" class="nav-cta">Get a Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-left-accent"></div>
+    <div class="hero-tag">Professional Painting · Licensed & Insured</div>
+    <h1 class="hero-title">
+      Fresh Paint.
+      <em>Fresh Start.</em>
+    </h1>
+    <p class="hero-sub">Interior and exterior painting done right — <strong>on time, on budget, and cleaner than we found it.</strong> Serving homeowners and businesses across the region since 2008.</p>
+    <div class="hero-cta-row">
+      <a href="#estimate" class="btn btn-blue">Get a Free Estimate →</a>
+      <a href="#work" class="btn btn-outline">See Our Work</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-icon">✓</span> Licensed & Insured</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> Satisfaction Guarantee</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> Free Color Consultation</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> Family Owned Since 2008</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img-main" src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=900&q=80" alt="Professional Painting">
+    <div class="hero-badge">
+      <div class="hero-badge-num">500+</div>
+      <div class="hero-badge-label">Homes & businesses painted since 2008</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip" id="services">
+  <div class="strip-item">
+    <span class="strip-icon">🏠</span>
+    <div class="strip-name">Interior</div>
+    <div class="strip-desc">Walls, ceilings, trim & cabinets</div>
+  </div>
+  <div class="strip-item">
+    <span class="strip-icon">🏡</span>
+    <div class="strip-name">Exterior</div>
+    <div class="strip-desc">Siding, decks, fences & more</div>
+  </div>
+  <div class="strip-item">
+    <span class="strip-icon">🏢</span>
+    <div class="strip-name">Commercial</div>
+    <div class="strip-desc">Offices, retail & multi-unit</div>
+  </div>
+  <div class="strip-item">
+    <span class="strip-icon">🎨</span>
+    <div class="strip-name">Color Consulting</div>
+    <div class="strip-desc">Free with every estimate</div>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER -->
+<section class="section ba-bg" id="work">
+  <div class="section-inner">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-heading">Before & <em>After</em></h2>
+    <p class="section-sub">Every project tells a story. Here's what a fresh coat of paint can do for a space.</p>
+    <div class="ba-grid">
+
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <img class="ba-img" src="https://images.unsplash.com/photo-1558618047-f4e60cef5498?w=400&q=70" alt="Before">
+          <img class="ba-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70" alt="After">
+        </div>
+        <div class="ba-label-row">
+          <div class="ba-label before">Before</div>
+          <div class="ba-label after">After</div>
+        </div>
+        <div class="ba-body">
+          <div class="ba-room">Living Room Interior</div>
+          <div class="ba-detail">Benjamin Moore · Pale Oak · Charleston, WV</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <img class="ba-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=70" alt="Before">
+          <img class="ba-img" src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=400&q=70" alt="After">
+        </div>
+        <div class="ba-label-row">
+          <div class="ba-label before">Before</div>
+          <div class="ba-label after">After</div>
+        </div>
+        <div class="ba-body">
+          <div class="ba-room">Kitchen Cabinet Refresh</div>
+          <div class="ba-detail">Sherwin-Williams · Alabaster · South Charleston, WV</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <img class="ba-img" src="https://images.unsplash.com/photo-1523413555-ad3a7b97b4f3?w=400&q=70" alt="Before">
+          <img class="ba-img" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=70" alt="After">
+        </div>
+        <div class="ba-label-row">
+          <div class="ba-label before">Before</div>
+          <div class="ba-label after">After</div>
+        </div>
+        <div class="ba-body">
+          <div class="ba-room">Exterior Full Paint</div>
+          <div class="ba-detail">PPG · Iron Gate Trim · Dunbar, WV</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COLOR SWATCHES -->
+<section class="section">
+  <div class="section-inner">
+    <div class="swatches-layout">
+      <div class="swatches-text">
+        <div class="section-tag">Color Consulting</div>
+        <h2 class="section-heading">The Right Color<br><em>Changes Everything</em></h2>
+        <p class="swatches-lead">"Most people don't know what they want until they see it on the wall."</p>
+        <p class="swatches-body">Every estimate includes a <strong>free color consultation</strong>. We work with Benjamin Moore, Sherwin-Williams, and PPG to find the perfect palette for your space — whether you know exactly what you want or have no idea where to start.</p>
+        <a href="#estimate" class="btn btn-blue">Book a Free Consultation →</a>
+      </div>
+      <div class="swatches-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#e8e0d0"></div><div class="swatch-name">Pale Oak</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#d4c5a9"></div><div class="swatch-name">Accessible Beige</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#b8c4bb"></div><div class="swatch-name">Sea Salt</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#8fa3a0"></div><div class="swatch-name">Rainwashed</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#c8d4d0"></div><div class="swatch-name">Silver Strand</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2c3e50"></div><div class="swatch-name">Hale Navy</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#f5f0e8"></div><div class="swatch-name">Alabaster</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#4a4a4a"></div><div class="swatch-name">Iron Gate</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#8b6f5e"></div><div class="swatch-name">Toasty</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#d4b896"></div><div class="swatch-name">Antique White</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#6b8c6b"></div><div class="swatch-name">Sage</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#c4a882"></div><div class="swatch-name">Caramel Latte</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROCESS -->
+<section class="section process-bg">
+  <div class="section-inner">
+    <div class="section-tag process-tag">How It Works</div>
+    <h2 class="section-heading process-heading">Simple Process.<br><em>Perfect Results.</em></h2>
+    <p class="section-sub process-sub" style="margin-bottom:4rem;">No surprises. No mess left behind. Just a beautifully painted space and a crew you'd invite back.</p>
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="process-dot">1</div>
+        <div class="process-name">Free Estimate</div>
+        <p class="process-desc">We come to you, assess the space, and provide a detailed written quote — usually same or next day.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">2</div>
+        <div class="process-name">Color Selection</div>
+        <p class="process-desc">Our free color consultation helps you choose the perfect palette. We bring samples directly to your space.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">3</div>
+        <div class="process-name">Prep & Protect</div>
+        <p class="process-desc">We move and cover furniture, tape edges, and prep all surfaces properly before a drop of paint touches the wall.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">4</div>
+        <div class="process-name">We Paint</div>
+        <p class="process-desc">Our crew works efficiently and cleanly. We show up when we say we will and we don't cut corners.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">5</div>
+        <div class="process-name">Final Walkthrough</div>
+        <p class="process-desc">You inspect every inch with us before we consider the job done. Not happy with something? We fix it. Simple as that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY US -->
+<section class="section why-bg" id="about">
+  <div class="section-inner">
+    <div class="why-layout">
+      <div class="why-img-wrap">
+        <img class="why-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=80" alt="Painter at work">
+        <div class="why-img-card">
+          <div class="why-img-card-num">16</div>
+          <div class="why-img-card-label">Years serving the community</div>
+        </div>
+      </div>
+      <div class="why-right">
+        <div class="section-tag">Why Bright Coat</div>
+        <h2 class="section-heading" style="margin-bottom:0.5rem;">We're Not the<br><em>Cheapest. Here's Why.</em></h2>
+        <p class="section-sub">We use better paint, hire better people, and spend more time doing it right. That difference shows — and it lasts.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-icon-wrap">🖌</div>
+            <div class="why-content">
+              <div class="why-name">Premium Materials Only</div>
+              <p class="why-text">We use Benjamin Moore, Sherwin-Williams, and PPG premium lines. The paint you see in magazines. Not the cheap stuff that needs three coats and fades in two years.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon-wrap">🏠</div>
+            <div class="why-content">
+              <div class="why-name">We Treat It Like Our Own</div>
+              <p class="why-text">We cover your furniture, protect your floors, clean up every day, and leave your home cleaner than we found it. No exceptions.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon-wrap">📅</div>
+            <div class="why-content">
+              <div class="why-name">We Show Up On Time</div>
+              <p class="why-text">If we say we'll be there Monday at 8am, we're there Monday at 8am. In this industry, that alone sets us apart from the competition.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon-wrap">✅</div>
+            <div class="why-content">
+              <div class="why-name">Satisfaction Guarantee</div>
+              <p class="why-text">If you're not 100% satisfied with the finished product we come back and make it right. No arguments, no extra charges. That's our promise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div class="section-tag">Customer Reviews</div>
+    <h2 class="section-heading" style="margin-bottom:3rem;">What Our<br><em>Clients Say</em></h2>
+    <div class="reviews-layout">
+      <div class="reviews-left">
+        <div class="reviews-rating-big">4.9</div>
+        <div class="reviews-stars">★★★★★</div>
+        <div class="reviews-count">Based on 180+ reviews</div>
+        <div class="reviews-platforms">
+          <div class="review-platform">
+            <div>
+              <div class="review-platform-name">Google</div>
+              <div class="review-platform-count">142 reviews</div>
+            </div>
+            <div class="review-platform-stars">★★★★★</div>
+          </div>
+          <div class="review-platform">
+            <div>
+              <div class="review-platform-name">Facebook</div>
+              <div class="review-platform-count">38 reviews</div>
+            </div>
+            <div class="review-platform-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-right">
+        <div class="review-card">
+          <div class="review-header">
+            <div>
+              <div class="review-author">Sarah M.</div>
+              <div class="review-meta">Interior Paint · Charleston, WV · 2 weeks ago</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">"I was nervous about painting my whole main floor but the Bright Coat crew made it completely painless. They covered everything, finished ahead of schedule, and the color turned out even better than I imagined. Already booked them for the upstairs."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div>
+              <div class="review-author">Tom & Linda R.</div>
+              <div class="review-meta">Exterior Paint · Dunbar, WV · 1 month ago</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">"Our house was long overdue for a fresh coat. These guys were professional from the first call to the final walkthrough. They spotted some wood rot we didn't even know about and fixed it before painting. That kind of care is rare."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div>
+              <div class="review-author">James P.</div>
+              <div class="review-meta">Commercial · Office Interior · St. Albans, WV · 3 months ago</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">"We needed our office painted over a weekend so we wouldn't disrupt business. Bright Coat showed up Friday evening and were completely done by Sunday afternoon. Clean, professional, and exactly the colors we wanted. Highly recommend."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT — INTEGRATED AS ESTIMATE SECTION -->
+<section class="section contact-bg" id="estimate">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <div class="contact-left">
+        <div class="section-tag contact-tag">Free Estimate</div>
+        <h2 class="contact-heading">Ready for a<br><em>Fresh Start?</em></h2>
+        <p class="contact-sub">Fill out the form and we'll be in touch within one business day to schedule your free in-home estimate. No pressure, no obligation.</p>
+        <div class="contact-details">
+          <div class="cdetail">
+            <div class="cdetail-icon">📞</div>
+            <div>
+              <div class="cdetail-label">Call or Text</div>
+              <div class="cdetail-value">(304) 555-0284</div>
+            </div>
+          </div>
+          <div class="cdetail">
+            <div class="cdetail-icon">✉️</div>
+            <div>
+              <div class="cdetail-label">Email</div>
+              <div class="cdetail-value">hello@brightcoatpainting.com</div>
+            </div>
+          </div>
+          <div class="cdetail">
+            <div class="cdetail-icon">📍</div>
+            <div>
+              <div class="cdetail-label">Service Area</div>
+              <div class="cdetail-value">Charleston & surrounding counties</div>
+            </div>
+          </div>
+          <div class="cdetail">
+            <div class="cdetail-icon">🕐</div>
+            <div>
+              <div class="cdetail-label">Hours</div>
+              <div class="cdetail-value">Mon–Sat · 7am–6pm</div>
+            </div>
+          </div>
+        </div>
+        <div class="guarantee-box">
+          <div class="guarantee-title">Our Satisfaction Guarantee</div>
+          <p class="guarantee-text">Not 100% happy with the finished job? We come back and fix it at no charge. That's been our policy since 2008 and it isn't changing.</p>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="form-title">Get Your Free Estimate</div>
+        <div class="form-subtitle">Usually respond within a few hours during business days.</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-input" placeholder="(304) 555-0000">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type of Project</label>
+          <select class="form-input">
+            <option>— Select —</option>
+            <option>Interior Painting</option>
+            <option>Exterior Painting</option>
+            <option>Interior & Exterior</option>
+            <option>Cabinet Painting</option>
+            <option>Commercial</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Us About the Project</label>
+          <textarea class="form-input" placeholder="Rough size, number of rooms, any special circumstances..."></textarea>
+        </div>
+        <button type="button" class="form-submit" onclick="showDemo()">Request My Free Estimate →</button>
+        <div class="demo-toast" id="demo-toast">⚡ Demo site by Koda Web Co — a real site would send this directly to the painting company!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">Bright Coat Painting Co.</div>
+        <div class="footer-logo-tag">Licensed & Insured · Est. 2008 · Family Owned</div>
+        <p class="footer-body">Professional interior and exterior painting serving the Charleston area and surrounding counties. Quality work, honest prices, satisfaction guaranteed.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Interior Painting</a>
+          <a href="#" class="footer-link">Exterior Painting</a>
+          <a href="#" class="footer-link">Cabinet Painting</a>
+          <a href="#" class="footer-link">Commercial Painting</a>
+          <a href="#" class="footer-link">Color Consulting</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">📞 (304) 555-0284</div>
+        <div class="footer-contact-item">✉️ hello@brightcoatpainting.com</div>
+        <div class="footer-contact-item">📍 Charleston, WV</div>
+        <div class="footer-contact-item">🕐 Mon–Sat · 7am–6pm</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Bright Coat Painting Co. · All Rights Reserved · Licensed & Insured</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://kodawebco.com" target="_blank" class="koda-badge">Built by Koda Web Co</a>
+
+<script>
+function showDemo() {
+  document.getElementById('demo-toast').classList.add('show');
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var t = document.querySelector(this.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
