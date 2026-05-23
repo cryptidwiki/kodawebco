@@ -242,9 +242,11 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 .statement-text .dim { color: var(--white3); }
 
 @media (max-width: 900px) {
-  .counters-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .counters-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .counters-section { padding: 3rem 1.5rem; }
   .statement-section { padding: 5rem 1.5rem; }
+  .counter-num { font-size: clamp(32px, 10vw, 56px); }
+  .counter-label { font-size: 9px; }
 }
 @media (max-width: 600px) {
   .counters-inner { grid-template-columns: 1fr 1fr; }
@@ -321,7 +323,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       <div class="counter-label">Sites Built & Live</div>
     </div>
     <div class="counter-item reveal reveal-delay-1">
-      <div class="counter-num" data-target="0" data-suffix=" Templates">0</div>
+      <div class="counter-num" data-target="0">0</div>
       <div class="counter-label">Templates Used. Ever.</div>
     </div>
     <div class="counter-item reveal reveal-delay-2">
