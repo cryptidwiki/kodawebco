@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koda Web Co — Premium Custom Websites | Veteran Owned & Operated</title>
+<meta name="description" content="Koda Web Co — Veteran owned and operated web design agency. Premium custom websites for businesses, professionals, and brands. No templates, no monthly fees. You own everything.">
+<link rel="canonical" href="https://kodawebco.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0c0c0c;
+  --black2: #111111;
+  --black3: #181818;
+  --black4: #222222;
+  --white: #f8f6f2;
+  --white2: rgba(248,246,242,0.65);
+  --white3: rgba(248,246,242,0.35);
+  --white4: rgba(248,246,242,0.12);
+  --gold: #d4a84b;
+  --gold2: rgba(212,168,75,0.12);
+  --gold3: rgba(212,168,75,0.06);
+  --border: rgba(248,246,242,0.08);
+  --border2: rgba(248,246,242,0.15);
+  --sans: 'DM Sans', sans-serif;
+  --display: 'Syne', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: var(--sans); overflow-x: hidden; }
+
+/* ── NAV ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 3rem; height: 68px; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s; }
+.nav.scrolled { background: rgba(12,12,12,0.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+.nav-logo { font-family: var(--display); font-size: 20px; font-weight: 700; letter-spacing: 0.02em; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2.5rem; }
+.nav-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white3); text-decoration: none; transition: color 0.15s; font-weight: 400; }
+.nav-link:hover { color: var(--white); }
+.nav-cta { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 10px 24px; background: var(--gold); color: var(--black); text-decoration: none; font-weight: 700; font-family: var(--display); transition: all 0.2s; }
+.nav-cta:hover { background: #c49a3a; transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 3rem 6rem; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212,168,75,0.06) 0%, transparent 70%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 80px 80px; }
+.hero-num { position: absolute; top: 50%; left: 3rem; transform: translateY(-50%); font-family: var(--display); font-size: clamp(200px, 25vw, 380px); font-weight: 800; color: rgba(248,246,242,0.025); line-height: 1; pointer-events: none; letter-spacing: -0.04em; user-select: none; }
+.hero-content { position: relative; z-index: 1; max-width: 1200px; }
+.hero-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-tag::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.hero-title { font-family: var(--display); font-size: clamp(52px, 8vw, 120px); font-weight: 800; line-height: 0.92; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+.hero-title em { font-style: normal; color: var(--gold); display: block; }
+.hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.hero-desc { font-size: 17px; line-height: 1.8; color: var(--white2); max-width: 520px; font-weight: 300; }
+.hero-desc strong { color: var(--white); font-weight: 500; }
+.hero-actions { display: flex; gap: 1rem; flex-shrink: 0; }
+.btn { font-family: var(--display); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 32px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: #c49a3a; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--white2); border: 1px solid var(--border2); }
+.btn-outline:hover { border-color: var(--white); color: var(--white); }
+.hero-scroll { position: absolute; bottom: 2rem; right: 3rem; font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; color: var(--white3); writing-mode: vertical-rl; display: flex; align-items: center; gap: 8px; }
+.hero-scroll::after { content: ''; width: 1px; height: 40px; background: var(--white3); }
+
+/* ── MARQUEE ── */
+.marquee-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--black2); padding: 1rem 0; overflow: hidden; }
+.marquee { display: flex; gap: 0; animation: marquee 25s linear infinite; white-space: nowrap; }
+.marquee-item { font-family: var(--display); font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white3); padding: 0 2.5rem; display: flex; align-items: center; gap: 2.5rem; flex-shrink: 0; }
+.marquee-item::after { content: '✦'; color: var(--gold); font-size: 8px; }
+@keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+/* ── SECTION ── */
+.section { padding: 8rem 3rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-tag::after { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.section-heading { font-family: var(--display); font-size: clamp(36px, 4.5vw, 64px); font-weight: 700; line-height: 1; letter-spacing: -0.01em; margin-bottom: 4rem; }
+.section-heading em { font-style: normal; color: var(--gold); }
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── WORK ── */
+.work-bg { background: var(--black2); }
+.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); }
+.work-item { background: var(--black2); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.2s; group: true; }
+.work-item:hover { background: var(--black3); }
+.work-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.work-item:hover::before { transform: scaleX(1); }
+.work-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--white3); margin-bottom: 1.5rem; }
+.work-title { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.work-url { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 1rem; text-decoration: none; }
+.work-url:hover { text-decoration: underline; }
+.work-desc { font-size: 14px; line-height: 1.8; color: var(--white3); font-weight: 300; margin-bottom: 1.5rem; }
+.work-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.work-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; padding: 3px 10px; border: 1px solid var(--border2); color: var(--white3); text-transform: uppercase; }
+.work-arrow { position: absolute; bottom: 2.5rem; right: 2.5rem; font-size: 20px; color: var(--white4); transition: all 0.2s; }
+.work-item:hover .work-arrow { color: var(--gold); transform: translate(3px, -3px); }
+
+/* ── SERVICES ── */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-bottom: 4rem; }
+.service-item { background: var(--black); padding: 2.5rem; transition: background 0.2s; position: relative; overflow: hidden; }
+.service-item:hover { background: var(--black2); }
+.service-icon { font-size: 28px; margin-bottom: 1.25rem; display: block; }
+.service-name { font-family: var(--display); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+.service-desc { font-size: 13px; line-height: 1.8; color: var(--white3); font-weight: 300; }
+
+/* ── PRICING ── */
+.pricing-bg { background: var(--black2); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-bottom: 1.5rem; }
+.pricing-card { background: var(--black2); padding: 2.5rem; position: relative; transition: background 0.2s; }
+.pricing-card:hover { background: var(--black3); }
+.pricing-card.featured { background: var(--black3); border: 1px solid var(--gold); }
+.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); font-family: var(--display); font-size: 9px; font-weight: 700; letter-spacing: 0.2em; padding: 3px 14px; }
+.pricing-tier { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+.pricing-name { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 1.25rem; }
+.pricing-price { font-family: var(--display); font-size: 52px; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 0.25rem; letter-spacing: -0.02em; }
+.pricing-price span { font-size: 22px; color: var(--white3); font-weight: 400; }
+.pricing-note { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; color: var(--white3); margin-bottom: 1.75rem; }
+.pricing-features { list-style: none; margin-bottom: 2rem; }
+.pricing-features li { font-size: 13px; color: var(--white2); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; font-weight: 300; }
+.pricing-features li::before { content: '✓'; color: var(--gold); font-size: 11px; flex-shrink: 0; }
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-cta { display: block; width: 100%; padding: 12px; text-align: center; font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid var(--border2); color: var(--white2); background: transparent; cursor: pointer; }
+.pricing-cta:hover { border-color: var(--gold); color: var(--gold); }
+.pricing-card.featured .pricing-cta { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.pricing-card.featured .pricing-cta:hover { background: #c49a3a; }
+.pricing-addon { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+.addon-item { background: var(--black2); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.addon-name { font-size: 13px; color: var(--white2); font-weight: 300; }
+.addon-price { font-family: var(--display); font-size: 16px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.pricing-disclaimer { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--white3); text-align: center; margin-top: 1.5rem; line-height: 1.7; }
+
+/* ── PROCESS ── */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.process-item { }
+.process-num { font-family: var(--display); font-size: 64px; font-weight: 800; color: var(--white4); line-height: 1; margin-bottom: 1rem; letter-spacing: -0.03em; }
+.process-name { font-family: var(--display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+.process-desc { font-size: 13px; line-height: 1.8; color: var(--white3); font-weight: 300; }
+
+/* ── WHY ── */
+.why-bg { background: var(--black2); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+.why-item { background: var(--black2); padding: 2.5rem; }
+.why-item:hover { background: var(--black3); }
+.why-label { font-family: var(--display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.why-label::before { content: ''; width: 20px; height: 2px; background: var(--gold); flex-shrink: 0; }
+.why-text { font-size: 14px; line-height: 1.85; color: var(--white3); font-weight: 300; }
+
+/* ── CONTACT ── */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-headline { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+.contact-headline em { font-style: normal; color: var(--gold); }
+.contact-body { font-size: 15px; line-height: 1.85; color: var(--white3); font-weight: 300; margin-bottom: 2rem; }
+.contact-detail { display: flex; gap: 1rem; margin-bottom: 1rem; }
+.contact-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; color: var(--white3); width: 80px; flex-shrink: 0; padding-top: 2px; text-transform: uppercase; }
+.contact-value { font-size: 14px; color: var(--white2); font-weight: 300; }
+.form-group { margin-bottom: 1rem; }
+.form-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white3); display: block; margin-bottom: 6px; }
+.form-input { width: 100%; background: var(--black2); border: 1px solid var(--border2); color: var(--white); font-family: var(--sans); font-size: 14px; padding: 12px 14px; outline: none; transition: border-color 0.15s; font-weight: 300; }
+.form-input:focus { border-color: var(--gold); }
+.form-input::placeholder { color: var(--white3); }
+textarea.form-input { min-height: 120px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-select { width: 100%; background: var(--black2); border: 1px solid var(--border2); color: var(--white); font-family: var(--sans); font-size: 14px; padding: 12px 14px; outline: none; cursor: pointer; font-weight: 300; }
+.form-select option { background: var(--black2); }
+.form-submit { width: 100%; padding: 15px; background: var(--gold); color: var(--black); border: none; font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem; }
+.form-submit:hover { background: #c49a3a; }
+
+/* ── FOOTER ── */
+.footer { background: var(--black); border-top: 1px solid var(--border); padding: 3rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+.footer-logo { font-family: var(--display); font-size: 20px; font-weight: 700; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-tagline { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: var(--white3); margin-top: 3px; }
+.footer-links { display: flex; gap: 2rem; }
+.footer-link { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white3); text-decoration: none; transition: color 0.15s; }
+.footer-link:hover { color: var(--gold); }
+.footer-copy { font-family: var(--mono); font-size: 10px; color: var(--white3); }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .work-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-addon { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .why-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .section { padding: 5rem 1.5rem; }
+  .hero { padding: 0 1.5rem 5rem; }
+  .nav { padding: 0 1.5rem; }
+  .footer { padding: 2rem 1.5rem; }
+  .footer-inner { flex-direction: column; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .process-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">KODA<span> WEB CO</span></a>
+  <div class="nav-links">
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#process" class="nav-link">Process</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Start a Project</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-num">KW</div>
+  <div class="hero-content">
+    <div class="hero-tag">🎖 Veteran Owned & Operated</div>
+    <h1 class="hero-title">
+      Premium Websites<br>
+      <em>That Work.</em>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        No templates. No monthly fees. No Wix. <strong>Custom coded websites built to last</strong> — for businesses, professionals, and brands ready to stand out. You own everything.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-outline">See Our Work</a>
+        <a href="#contact" class="btn btn-gold">Start a Project →</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <div class="marquee-item">Custom Design</div>
+    <div class="marquee-item">No Templates</div>
+    <div class="marquee-item">You Own It</div>
+    <div class="marquee-item">Fast & Secure</div>
+    <div class="marquee-item">Mobile Ready</div>
+    <div class="marquee-item">SEO Optimized</div>
+    <div class="marquee-item">Veteran Owned</div>
+    <div class="marquee-item">Premium Quality</div>
+    <div class="marquee-item">Custom Design</div>
+    <div class="marquee-item">No Templates</div>
+    <div class="marquee-item">You Own It</div>
+    <div class="marquee-item">Fast & Secure</div>
+    <div class="marquee-item">Mobile Ready</div>
+    <div class="marquee-item">SEO Optimized</div>
+    <div class="marquee-item">Veteran Owned</div>
+    <div class="marquee-item">Premium Quality</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- WORK -->
+<section class="section work-bg" id="work">
+  <div class="section-inner">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-heading">Real Work.<br><em>Live Sites.</em></h2>
+    <div class="work-grid">
+
+      <div class="work-item">
+        <div class="work-num">01</div>
+        <div class="work-title">CryptidWiki</div>
+        <a href="https://cryptidwiki.com" target="_blank" class="work-url">cryptidwiki.com ↗</a>
+        <p class="work-desc">A full paranormal entity database featuring 145+ creatures with lore, threat ratings, sightings, AI-powered battle simulations, creature of the day, global map, and full SEO. One of the most feature-rich static sites you'll find anywhere.</p>
+        <div class="work-tags">
+          <span class="work-tag">Database</span>
+          <span class="work-tag">AI Integration</span>
+          <span class="work-tag">D3 Maps</span>
+          <span class="work-tag">SEO</span>
+          <span class="work-tag">Mobile</span>
+        </div>
+        <div class="work-arrow">↗</div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-num">02</div>
+        <div class="work-title">Reported.Live</div>
+        <a href="https://reported.live" target="_blank" class="work-url">reported.live ↗</a>
+        <p class="work-desc">A live global incident reporting platform with an interactive world heatmap, category filtering, incident feed, photo uploads, report submissions via Formspree, and a real-time news ticker. Community-powered paranormal monitoring.</p>
+        <div class="work-tags">
+          <span class="work-tag">Live Data</span>
+          <span class="work-tag">World Map</span>
+          <span class="work-tag">Community</span>
+          <span class="work-tag">Forms</span>
+        </div>
+        <div class="work-arrow">↗</div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-num">03</div>
+        <div class="work-title">Dakota Dennison</div>
+        <a href="https://dakotadennison.com" target="_blank" class="work-url">dakotadennison.com ↗</a>
+        <p class="work-desc">A cybersecurity resume site with a terminal boot sequence animation, animated skill bars, experience timeline, certification tracker, and contact form. Built for a Marine veteran and former detective entering the cybersecurity field.</p>
+        <div class="work-tags">
+          <span class="work-tag">Resume</span>
+          <span class="work-tag">Animation</span>
+          <span class="work-tag">Terminal UI</span>
+          <span class="work-tag">Personal Brand</span>
+        </div>
+        <div class="work-arrow">↗</div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-num">04</div>
+        <div class="work-title">Elise Dennison</div>
+        <a href="https://elisedennison.com" target="_blank" class="work-url">elisedennison.com ↗</a>
+        <p class="work-desc">A premium healthcare professional portfolio featuring a full-screen teal hero with headshot, animated skill bars, experience timeline, education section, and contact form. Built for a Market Manager targeting director-level roles.</p>
+        <div class="work-tags">
+          <span class="work-tag">Portfolio</span>
+          <span class="work-tag">Healthcare</span>
+          <span class="work-tag">Professional</span>
+          <span class="work-tag">Animation</span>
+        </div>
+        <div class="work-arrow">↗</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-tag">What We Build</div>
+    <h2 class="section-heading">Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <span class="service-icon">👤</span>
+        <div class="service-name">Resume & Portfolio</div>
+        <p class="service-desc">Stand-out personal sites for professionals, job seekers, and creatives. Animated, custom, and built to make an impression before the interview starts.</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon">🏢</span>
+        <div class="service-name">Business Sites</div>
+        <p class="service-desc">Custom websites for local businesses, contractors, clinics, and service providers. Fast, mobile-ready, and built to convert visitors into customers.</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon">🛒</span>
+        <div class="service-name">E-Commerce</div>
+        <p class="service-desc">Sell online with Stripe payment links or Shopify integration. No bloated platforms — clean, fast, and built into your existing site.</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon">🤖</span>
+        <div class="service-name">AI Features</div>
+        <p class="service-desc">Add real AI to your site — chatbots, content generators, smart search, and custom tools powered by Claude. Features your competitors don't have.</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon">🗺</span>
+        <div class="service-name">Interactive Maps & Data</div>
+        <p class="service-desc">D3-powered maps, live dashboards, data visualization, and custom databases. Turn your data into something people actually want to explore.</p>
+      </div>
+      <div class="service-item">
+        <span class="service-icon">🔧</span>
+        <div class="service-name">Maintenance & Updates</div>
+        <p class="service-desc">Monthly retainer plans for content updates, new pages, fixes, and ongoing improvements. We stay on call so you never have to worry about your site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section class="section pricing-bg" id="pricing">
+  <div class="section-inner">
+    <div class="section-tag">Transparent Pricing</div>
+    <h2 class="section-heading">No Surprises.<br><em>Just Results.</em></h2>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-name">Resume & Portfolio</div>
+        <div class="pricing-price">$299<span> one-time</span></div>
+        <div class="pricing-note">Everything you need to get hired.</div>
+        <ul class="pricing-features">
+          <li>Custom design — no templates</li>
+          <li>Fully mobile responsive</li>
+          <li>Experience & skills sections</li>
+          <li>Contact form included</li>
+          <li>SEO optimized</li>
+          <li>Domain & DNS setup</li>
+          <li>You own the code</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Most Popular</div>
+        <div class="pricing-name">Business Site</div>
+        <div class="pricing-price">$599<span> one-time</span></div>
+        <div class="pricing-note">Everything a business needs online.</div>
+        <ul class="pricing-features">
+          <li>Multi-page custom site</li>
+          <li>Services, about & contact pages</li>
+          <li>Contact & inquiry forms</li>
+          <li>Google Search Console setup</li>
+          <li>Full SEO & sitemap</li>
+          <li>Mobile & tablet optimized</li>
+          <li>Domain & DNS setup</li>
+          <li>You own everything</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get Started</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Advanced</div>
+        <div class="pricing-name">E-Commerce</div>
+        <div class="pricing-price">$899<span> one-time</span></div>
+        <div class="pricing-note">Start selling online fast.</div>
+        <ul class="pricing-features">
+          <li>Everything in Business Site</li>
+          <li>Stripe or Shopify integration</li>
+          <li>Product pages & checkout</li>
+          <li>Payment processing setup</li>
+          <li>Order confirmation emails</li>
+          <li>Inventory coordination</li>
+          <li>You own everything</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get Started</a>
+      </div>
+
+    </div>
+
+    <div class="pricing-addon">
+      <div class="addon-item">
+        <span class="addon-name">AI Features Add-On</span>
+        <span class="addon-price">$300–500</span>
+      </div>
+      <div class="addon-item">
+        <span class="addon-name">Monthly Maintenance</span>
+        <span class="addon-price">$75 / mo</span>
+      </div>
+      <div class="addon-item">
+        <span class="addon-name">Domain & DNS Setup Only</span>
+        <span class="addon-price">$49</span>
+      </div>
+    </div>
+
+    <p class="pricing-disclaimer">All prices are starting rates. Final cost may vary depending on project scope, complexity, and specific requirements.<br>Every project is quoted individually — reach out and we'll figure out exactly what you need.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-inner">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-heading">Simple Process.<br><em>Real Results.</em></h2>
+    <div class="process-grid">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div class="process-name">Discovery</div>
+        <p class="process-desc">We talk through your goals, your audience, and what you need the site to do. No forms, no questionnaires — just a real conversation.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div class="process-name">Design & Build</div>
+        <p class="process-desc">We build your site from scratch — custom design, custom code. No templates, no drag and drop. Every pixel is intentional.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div class="process-name">Review & Refine</div>
+        <p class="process-desc">You see the site before it goes live. We make adjustments until it's exactly right. Your feedback drives the final product.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div class="process-name">Launch & Hand Off</div>
+        <p class="process-desc">We handle deployment, DNS, and launch. You get everything — the code, the domain, the logins. It's yours, completely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY -->
+<section class="section why-bg">
+  <div class="section-inner">
+    <div class="section-tag">Why Koda Web Co</div>
+    <h2 class="section-heading">What Makes Us<br><em>Different</em></h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-label">No Templates. Ever.</div>
+        <p class="why-text">Every site we build is written from scratch. That means it looks like you — not like the thousand other businesses using the same Wix theme. Custom code loads faster, ranks better, and never gets discontinued.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-label">You Own Everything</div>
+        <p class="why-text">Your domain, your code, your hosting. We don't lock you into a platform or a monthly subscription just to keep your site running. When we're done, everything is yours — no strings attached.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-label">No Monthly Fees</div>
+        <p class="why-text">Wix charges $23/month forever. Squarespace is $33/month. We charge once and you're done. The only recurring cost is your domain renewal — about $15 a year. That's it.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-label">Veteran Owned & Operated</div>
+        <p class="why-text">Built on the same discipline, attention to detail, and mission focus that defined years of military service. When we take on your project we see it through — no excuses, no shortcuts, no disappearing acts. You're talking to a real person who picks up the phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-heading">Let's Build<br><em>Something.</em></h2>
+    <div class="contact-layout">
+      <div>
+        <p class="contact-body">Tell us what you need and we'll put together a quote. Most projects start within a week of first contact. No pressure, no hard sell — just an honest conversation about what we can build for you.</p>
+        <div class="contact-detail">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Charleston, West Virginia</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-label">Response</div>
+          <div class="contact-value">Within 24 hours, usually same day</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-label">Service Area</div>
+          <div class="contact-value">Nationwide — remote friendly</div>
+        </div>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojbdjbq" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" name="name" class="form-input" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service Interested In</label>
+            <select name="service" class="form-select form-input">
+              <option value="">— Select a service —</option>
+              <option>Resume & Portfolio Site — $299</option>
+              <option>Business Site — $599</option>
+              <option>E-Commerce Site — $899</option>
+              <option>AI Features Add-On</option>
+              <option>Monthly Maintenance</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell Us About Your Project</label>
+            <textarea name="message" class="form-input" placeholder="What do you need? Who is it for? Any details help..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send It →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">KODA<span> WEB CO</span></div>
+      <div class="footer-tagline">Premium Custom Websites · Veteran Owned & Operated</div>
+    </div>
+    <div class="footer-links">
+      <a href="#work" class="footer-link">Work</a>
+      <a href="#services" class="footer-link">Services</a>
+      <a href="#pricing" class="footer-link">Pricing</a>
+      <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-copy">© <span id="year"></span> Koda Web Co — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
