@@ -206,6 +206,49 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   .process-grid { grid-template-columns: 1fr; }
   .pricing-card.featured::before { font-size: 8px; }
 }
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── COUNTERS ── */
+.counters-section { background: var(--gold); padding: 4rem 3rem; }
+.counters-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.counter-item { text-align: center; }
+.counter-num { font-family: var(--display); font-size: clamp(48px, 6vw, 80px); font-weight: 800; color: var(--black); line-height: 1; letter-spacing: -0.02em; }
+.counter-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(12,12,12,0.6); text-transform: uppercase; margin-top: 0.5rem; }
+.counter-divider { width: 1px; background: rgba(12,12,12,0.15); margin: 0 auto; display: none; }
+
+/* ── LIVE PREVIEWS ── */
+.preview-wrap { position: relative; width: 100%; padding-bottom: 62%; background: var(--black3); overflow: hidden; border: 1px solid var(--border2); margin-bottom: 1.5rem; }
+.preview-wrap iframe { position: absolute; top: 0; left: 0; width: 250%; height: 250%; transform: scale(0.4); transform-origin: top left; border: none; pointer-events: none; border-radius: 0; }
+.preview-overlay { position: absolute; inset: 0; z-index: 2; cursor: pointer; }
+.preview-btn { position: absolute; bottom: 1rem; right: 1rem; font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; padding: 6px 14px; background: var(--gold); color: var(--black); font-weight: 700; z-index: 3; opacity: 0; transition: opacity 0.2s; text-decoration: none; }
+.work-item:hover .preview-btn { opacity: 1; }
+
+/* ── STATEMENT SECTION ── */
+.statement-section { padding: 8rem 3rem; overflow: hidden; position: relative; }
+.statement-inner { max-width: 1200px; margin: 0 auto; }
+.statement-text { font-family: var(--display); font-size: clamp(36px, 5vw, 72px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+.statement-text em { color: var(--gold); font-style: normal; }
+.statement-text .dim { color: var(--white3); }
+
+@media (max-width: 900px) {
+  .counters-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .counters-section { padding: 3rem 1.5rem; }
+  .statement-section { padding: 5rem 1.5rem; }
+}
+@media (max-width: 600px) {
+  .counters-inner { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
 <body>
@@ -269,16 +312,40 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   </div>
 </div>
 
+
+<!-- COUNTERS -->
+<div class="counters-section">
+  <div class="counters-inner">
+    <div class="counter-item reveal">
+      <div class="counter-num" data-target="5">0</div>
+      <div class="counter-label">Sites Built & Live</div>
+    </div>
+    <div class="counter-item reveal reveal-delay-1">
+      <div class="counter-num" data-target="0" data-suffix=" Templates">0</div>
+      <div class="counter-label">Templates Used. Ever.</div>
+    </div>
+    <div class="counter-item reveal reveal-delay-2">
+      <div class="counter-num" data-target="100" data-suffix="%">0</div>
+      <div class="counter-label">Client Satisfaction</div>
+    </div>
+    <div class="counter-item reveal reveal-delay-3">
+      <div class="counter-num" data-target="299" data-prefix="$">0</div>
+      <div class="counter-label">Starting Price</div>
+    </div>
+  </div>
+</div>
+
 <hr class="divider">
 
 <!-- WORK -->
 <section class="section work-bg" id="work">
   <div class="section-inner">
-    <div class="section-tag">Portfolio</div>
-    <h2 class="section-heading">Real Work.<br><em>Live Sites.</em></h2>
+    <div class="section-tag reveal">Portfolio</div>
+    <h2 class="section-heading reveal">Real Work.<br><em>Live Sites.</em></h2>
     <div class="work-grid">
 
       <div class="work-item">
+        <div class="preview-wrap"><iframe src="https://dakotadennison.com" loading="lazy" scrolling="no" title="Dakota Dennison Preview"></iframe><a href="https://dakotadennison.com" target="_blank" class="preview-btn">VIEW LIVE SITE ↗</a></div>
         <div class="work-num">01</div>
         <div class="work-title">Resume & Portfolio</div>
         <a href="https://dakotadennison.com" target="_blank" class="work-url">dakotadennison.com ↗</a>
@@ -293,6 +360,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       </div>
 
       <div class="work-item">
+        <div class="preview-wrap"><iframe src="/realestate.html" loading="lazy" scrolling="no" title="Real Estate Preview"></iframe><a href="/realestate.html" target="_blank" class="preview-btn">VIEW LIVE SITE ↗</a></div>
         <div class="work-num">02</div>
         <div class="work-title">Real Estate Agent</div>
         <a href="/realestate.html" target="_blank" class="work-url">View Example Site ↗</a>
@@ -307,6 +375,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       </div>
 
       <div class="work-item">
+        <div class="preview-wrap"><iframe src="https://elisedennison.com" loading="lazy" scrolling="no" title="Elise Dennison Preview"></iframe><a href="https://elisedennison.com" target="_blank" class="preview-btn">VIEW LIVE SITE ↗</a></div>
         <div class="work-num">03</div>
         <div class="work-title">Healthcare Professional</div>
         <a href="https://elisedennison.com" target="_blank" class="work-url">elisedennison.com ↗</a>
@@ -321,6 +390,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       </div>
 
       <div class="work-item">
+        <div class="preview-wrap"><iframe src="/lawfirm.html" loading="lazy" scrolling="no" title="Law Firm Preview"></iframe><a href="/lawfirm.html" target="_blank" class="preview-btn">VIEW LIVE SITE ↗</a></div>
         <div class="work-num">04</div>
         <div class="work-title">Personal Injury Law Firm</div>
         <a href="/lawfirm.html" target="_blank" class="work-url">View Example Site ↗</a>
@@ -335,6 +405,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       </div>
 
       <div class="work-item" style="grid-column: 1 / -1;">
+        <div class="preview-wrap" style="padding-bottom:35%"><iframe src="/painter.html" loading="lazy" scrolling="no" title="Painter Preview"></iframe><a href="/painter.html" target="_blank" class="preview-btn">VIEW LIVE SITE ↗</a></div>
         <div class="work-num">05</div>
         <div class="work-title">Painting Contractor</div>
         <a href="/painter.html" target="_blank" class="work-url">View Example Site ↗</a>
@@ -357,10 +428,10 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 
 <section class="section" id="services">
   <div class="section-inner">
-    <div class="section-tag">What We Build</div>
-    <h2 class="section-heading">Services</h2>
+    <div class="section-tag reveal">What We Build</div>
+    <h2 class="section-heading reveal">Services</h2>
     <div class="services-grid">
-      <div class="service-item">
+      <div class="service-item reveal">
         <span class="service-icon">👤</span>
         <div class="service-name">Resume & Portfolio</div>
         <p class="service-desc">Stand-out personal sites for professionals, job seekers, and creatives. Animated, custom, and built to make an impression before the interview starts.</p>
@@ -396,11 +467,24 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 
 <hr class="divider">
 
+
+<!-- STATEMENT -->
+<div class="statement-section">
+  <div class="statement-inner">
+    <div class="statement-text reveal">
+      <span class="dim">Your competitors are using</span><br>
+      <em>Wix templates.</em><br>
+      <span class="dim">You won't be.</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
 <!-- PRICING -->
 <section class="section pricing-bg" id="pricing">
   <div class="section-inner">
-    <div class="section-tag">Transparent Pricing</div>
-    <h2 class="section-heading">No Surprises.<br><em>Just Results.</em></h2>
+    <div class="section-tag reveal">Transparent Pricing</div>
+    <h2 class="section-heading reveal">No Surprises.<br><em>Just Results.</em></h2>
     <div class="pricing-grid">
 
       <div class="pricing-card">
@@ -611,13 +695,59 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   </div>
 </footer>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
 
+
+<script>
+// ── SCROLL REVEAL ──
+function revealOnScroll() {
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  els.forEach(function(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.88) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+// ── COUNTER ANIMATION ──
+var countersStarted = false;
+function startCounters() {
+  if (countersStarted) return;
+  var section = document.querySelector('.counters-section');
+  if (!section) return;
+  var rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.9) {
+    countersStarted = true;
+    document.querySelectorAll('.counter-num').forEach(function(el) {
+      var target = parseInt(el.getAttribute('data-target'));
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1800;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        var val = Math.floor(ease * target);
+        el.textContent = prefix + val + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = prefix + target + suffix;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+}
+window.addEventListener('scroll', startCounters);
+startCounters();
+
+// ── NAV SCROLL ──
 window.addEventListener('scroll', function() {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
 });
 
+// ── SMOOTH SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   a.addEventListener('click', function(e) {
     e.preventDefault();
@@ -625,6 +755,8 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
