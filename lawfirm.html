@@ -73,7 +73,7 @@ body { background: var(--black); color: var(--white); font-family: var(--sans); 
 
 /* HERO RIGHT */
 .hero-right { position: relative; overflow: hidden; }
-.hero-img { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=1200&q=80') center/cover no-repeat; filter: grayscale(30%) brightness(0.4); }
+.hero-img { position: absolute; inset: 0; background: url('images/carcrash.png') center center/cover no-repeat; filter: grayscale(30%) brightness(0.4); }
 .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(10,10,10,0.6) 100%); }
 .hero-stats-vert { position: absolute; bottom: 3rem; left: 2rem; right: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border2); z-index: 1; }
 .hstat { background: rgba(10,10,10,0.85); padding: 1.25rem; text-align: center; backdrop-filter: blur(8px); }
@@ -241,7 +241,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 
 /* MOBILE */
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; height: auto; }
+  .hero { grid-template-columns: 1fr; height: auto; min-height: 100vh; }
   .hero-right { height: 300px; }
   .hero-stats-vert { position: relative; bottom: auto; left: auto; right: auto; margin-top: 0; }
   .why-layout { grid-template-columns: 1fr; }
