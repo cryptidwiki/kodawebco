@@ -13,10 +13,10 @@
   --black3: #141414;
   --black4: #1a1a1a;
   --black5: #202020;
-  --red: #c0392b;
-  --red2: #a93226;
-  --red3: rgba(192,57,43,0.08);
-  --red4: rgba(192,57,43,0.15);
+  --red: #8b1a1a;
+  --red2: #6b1414;
+  --red3: rgba(139,26,26,0.08);
+  --red4: rgba(139,26,26,0.15);
   --white: #f0f0f0;
   --white2: rgba(240,240,240,0.7);
   --white3: rgba(240,240,240,0.4);
@@ -51,7 +51,7 @@ body { background: var(--black); color: var(--white); font-family: var(--sans); 
 /* HERO */
 .hero { height: 100vh; position: relative; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
 .hero-left { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 5rem 3rem; background: var(--black); }
-.hero-left::after { content: ''; position: absolute; top: 0; right: -1px; bottom: 0; width: 3px; background: var(--red); z-index: 3; }
+
 .hero-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.35em; color: var(--red); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
 .hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--red); }
 .hero-title { font-family: var(--display); font-size: clamp(72px, 9vw, 130px); line-height: 0.88; letter-spacing: 0.02em; color: var(--white); margin-bottom: 2rem; }
