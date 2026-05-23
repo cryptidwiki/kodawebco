@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmon & Associates — Personal Injury Attorneys</title>
+<meta name="description" content="Harmon & Associates — Aggressive personal injury attorneys. No fee unless we win. Free consultation 24/7.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Barlow:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --black2: #0f0f0f;
+  --black3: #141414;
+  --black4: #1a1a1a;
+  --black5: #202020;
+  --red: #c0392b;
+  --red2: #a93226;
+  --red3: rgba(192,57,43,0.08);
+  --red4: rgba(192,57,43,0.15);
+  --white: #f0f0f0;
+  --white2: rgba(240,240,240,0.7);
+  --white3: rgba(240,240,240,0.4);
+  --white4: rgba(240,240,240,0.12);
+  --white5: rgba(240,240,240,0.06);
+  --border: rgba(240,240,240,0.06);
+  --border2: rgba(240,240,240,0.12);
+  --display: 'Bebas Neue', sans-serif;
+  --cond: 'Barlow Condensed', sans-serif;
+  --sans: 'Barlow', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: var(--sans); overflow-x: hidden; }
+
+/* DEMO BANNER */
+.demo-banner { background: var(--red); padding: 10px 2rem; text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--white); position: sticky; top: 0; z-index: 300; }
+.demo-banner a { color: var(--white); font-weight: 700; text-decoration: underline; }
+
+/* NAV */
+.nav { background: rgba(10,10,10,0.97); border-bottom: 1px solid var(--border2); padding: 0 3rem; height: 72px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 37px; z-index: 200; backdrop-filter: blur(10px); }
+.nav-logo-name { font-family: var(--display); font-size: 26px; letter-spacing: 0.1em; color: var(--white); line-height: 1; }
+.nav-logo-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.22em; color: var(--red); text-transform: uppercase; margin-top: 2px; }
+.nav-links { display: flex; gap: 2.5rem; }
+.nav-link { font-family: var(--cond); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white3); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+.nav-link:hover { color: var(--white); }
+.nav-phone { font-family: var(--mono); font-size: 13px; color: var(--red); letter-spacing: 0.05em; }
+.nav-cta { font-family: var(--cond); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 26px; background: var(--red); color: var(--white); text-decoration: none; font-weight: 700; transition: all 0.2s; }
+.nav-cta:hover { background: var(--red2); }
+
+/* HERO */
+.hero { height: 100vh; position: relative; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.hero-left { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 5rem 3rem; background: var(--black); }
+.hero-left::after { content: ''; position: absolute; top: 0; right: -1px; bottom: 0; width: 3px; background: var(--red); z-index: 3; }
+.hero-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.35em; color: var(--red); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--red); }
+.hero-title { font-family: var(--display); font-size: clamp(72px, 9vw, 130px); line-height: 0.88; letter-spacing: 0.02em; color: var(--white); margin-bottom: 2rem; }
+.hero-title .red { color: var(--red); display: block; }
+.hero-title .outline { -webkit-text-stroke: 1px rgba(240,240,240,0.3); color: transparent; display: block; }
+.hero-sub { font-size: 16px; line-height: 1.85; color: var(--white3); font-weight: 300; max-width: 460px; margin-bottom: 2.5rem; }
+.hero-sub strong { color: var(--white); font-weight: 500; }
+.hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.btn { font-family: var(--cond); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 36px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+.btn-red { background: var(--red); color: var(--white); }
+.btn-red:hover { background: var(--red2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,57,43,0.35); }
+.btn-ghost { background: transparent; color: var(--white2); border: 1px solid var(--border2); }
+.btn-ghost:hover { border-color: var(--white3); color: var(--white); }
+.hero-promises { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border2); }
+.promise { padding: 0.85rem 1rem; border-right: 1px solid var(--border2); border-bottom: 1px solid var(--border2); display: flex; align-items: center; gap: 8px; font-family: var(--cond); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white3); }
+.promise:nth-child(even) { border-right: none; }
+.promise:nth-child(3), .promise:nth-child(4) { border-bottom: none; }
+.promise-check { color: var(--red); font-size: 12px; flex-shrink: 0; }
+
+/* HERO RIGHT */
+.hero-right { position: relative; overflow: hidden; }
+.hero-img { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=1200&q=80') center/cover no-repeat; filter: grayscale(30%) brightness(0.4); }
+.hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(10,10,10,0.6) 100%); }
+.hero-stats-vert { position: absolute; bottom: 3rem; left: 2rem; right: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border2); z-index: 1; }
+.hstat { background: rgba(10,10,10,0.85); padding: 1.25rem; text-align: center; backdrop-filter: blur(8px); }
+.hstat-num { font-family: var(--display); font-size: 36px; color: var(--red); line-height: 1; letter-spacing: 0.02em; }
+.hstat-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; color: var(--white3); text-transform: uppercase; margin-top: 4px; }
+
+/* TICKER */
+.ticker-wrap { background: var(--red); overflow: hidden; padding: 0.6rem 0; border-top: none; }
+.ticker { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+.ticker-item { font-family: var(--cond); font-size: 12px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.85); padding: 0 2.5rem; flex-shrink: 0; display: flex; align-items: center; gap: 2.5rem; }
+.ticker-item::after { content: '◆'; font-size: 6px; color: rgba(255,255,255,0.4); }
+@keyframes ticker { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+/* SECTION */
+.section { padding: 8rem 3rem; }
+.section-inner { max-width: 1300px; margin: 0 auto; }
+.section-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
+.section-heading { font-family: var(--display); font-size: clamp(48px, 6vw, 88px); line-height: 0.92; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem; }
+.section-sub { font-size: 15px; color: var(--white3); font-weight: 300; line-height: 1.75; max-width: 580px; margin-bottom: 4rem; }
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* PRACTICE AREAS — BIG LAYOUT */
+.practice-bg { background: var(--black2); }
+.practice-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border2); }
+.practice-item { display: grid; grid-template-columns: 80px 1fr 1fr auto; gap: 2rem; align-items: center; padding: 2rem 2.5rem; border-bottom: 1px solid var(--border); transition: all 0.2s; cursor: pointer; position: relative; overflow: hidden; }
+.practice-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--red3); transition: width 0.3s; }
+.practice-item:hover::before { width: 100%; }
+.practice-item:last-child { border-bottom: none; }
+.practice-item:hover { padding-left: 3rem; }
+.practice-num { font-family: var(--display); font-size: 48px; color: var(--red); opacity: 0.3; line-height: 1; letter-spacing: 0.02em; position: relative; z-index: 1; }
+.practice-name { font-family: var(--display); font-size: 32px; letter-spacing: 0.03em; color: var(--white); line-height: 1; position: relative; z-index: 1; }
+.practice-desc { font-size: 13px; line-height: 1.7; color: var(--white3); font-weight: 300; position: relative; z-index: 1; }
+.practice-arrow { font-size: 24px; color: var(--red); opacity: 0; transition: opacity 0.2s; position: relative; z-index: 1; }
+.practice-item:hover .practice-arrow { opacity: 1; }
+
+/* RESULTS — CINEMATIC */
+.results-bg { background: var(--black3); }
+.results-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border2); margin-bottom: 1px; }
+.result-featured-card { background: var(--black3); padding: 3rem; position: relative; overflow: hidden; transition: background 0.2s; }
+.result-featured-card:hover { background: var(--black4); }
+.result-featured-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.result-featured-card:hover::after { transform: scaleX(1); }
+.result-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; color: var(--red); text-transform: uppercase; margin-bottom: 0.75rem; }
+.result-amount { font-family: var(--display); font-size: 72px; color: var(--white); line-height: 0.9; letter-spacing: 0.01em; margin-bottom: 0.5rem; }
+.result-type { font-family: var(--cond); font-size: 20px; font-weight: 600; letter-spacing: 0.08em; color: var(--white2); margin-bottom: 0.5rem; text-transform: uppercase; }
+.result-desc { font-size: 13px; color: var(--white3); font-weight: 300; line-height: 1.6; }
+.results-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border2); }
+.result-small { background: var(--black3); padding: 2rem; text-align: center; transition: background 0.2s; }
+.result-small:hover { background: var(--black4); }
+.result-small-amount { font-family: var(--display); font-size: 40px; color: var(--red); line-height: 1; letter-spacing: 0.02em; margin-bottom: 4px; }
+.result-small-type { font-family: var(--cond); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--white2); text-transform: uppercase; margin-bottom: 4px; }
+.result-small-desc { font-size: 11px; color: var(--white3); font-weight: 300; line-height: 1.5; }
+.results-disclaimer { font-family: var(--mono); font-size: 9px; color: var(--white3); opacity: 0.4; margin-top: 1.5rem; line-height: 1.7; letter-spacing: 0.05em; text-align: center; }
+
+/* WHY US — SPLIT */
+.why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.why-left { background: var(--red); padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+.why-left-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
+.why-left-heading { font-family: var(--display); font-size: clamp(48px,5vw,80px); line-height: 0.92; color: var(--white); letter-spacing: 0.02em; margin-bottom: 2rem; }
+.why-left-body { font-size: 16px; line-height: 1.85; color: rgba(255,255,255,0.75); font-weight: 300; }
+.why-left-body strong { color: var(--white); font-weight: 600; }
+.why-right { background: var(--black2); padding: 5rem 3.5rem; display: flex; flex-direction: column; gap: 0; }
+.why-item { padding: 2rem 0; border-bottom: 1px solid var(--border2); display: flex; gap: 1.5rem; align-items: flex-start; }
+.why-item:first-child { padding-top: 0; }
+.why-item:last-child { border-bottom: none; padding-bottom: 0; }
+.why-num { font-family: var(--display); font-size: 48px; color: var(--red); opacity: 0.25; line-height: 1; flex-shrink: 0; width: 60px; letter-spacing: 0.02em; }
+.why-content { }
+.why-name { font-family: var(--cond); font-size: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); margin-bottom: 0.5rem; }
+.why-text { font-size: 14px; line-height: 1.75; color: var(--white3); font-weight: 300; }
+
+/* ATTORNEYS */
+.attorneys-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.attorney-card { position: relative; overflow: hidden; background: var(--black2); border: 1px solid var(--border2); transition: border-color 0.2s; }
+.attorney-card:hover { border-color: var(--red); }
+.attorney-img-wrap { position: relative; overflow: hidden; }
+.attorney-img { width: 100%; height: 380px; object-fit: cover; object-position: center top; display: block; filter: grayscale(20%); transition: all 0.4s; }
+.attorney-card:hover .attorney-img { filter: grayscale(0%); transform: scale(1.02); }
+.attorney-img-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, var(--black2), transparent); }
+.attorney-body { padding: 2rem; }
+.attorney-name { font-family: var(--display); font-size: 36px; letter-spacing: 0.04em; color: var(--white); line-height: 1; margin-bottom: 4px; }
+.attorney-title { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; color: var(--red); text-transform: uppercase; margin-bottom: 1rem; }
+.attorney-bio { font-size: 14px; line-height: 1.8; color: var(--white3); font-weight: 300; margin-bottom: 1.25rem; }
+.attorney-creds { display: flex; gap: 6px; flex-wrap: wrap; }
+.attorney-cred-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; padding: 3px 10px; border: 1px solid var(--border2); color: var(--white3); }
+
+/* TESTIMONIALS */
+.test-bg { background: var(--black2); }
+.test-layout { display: grid; grid-template-columns: 400px 1fr; gap: 4rem; align-items: start; }
+.test-left { position: sticky; top: 120px; }
+.test-left-heading { font-family: var(--display); font-size: clamp(48px,5vw,80px); line-height: 0.92; color: var(--white); letter-spacing: 0.02em; margin-bottom: 1.5rem; }
+.test-left-heading span { color: var(--red); display: block; }
+.test-left-body { font-size: 15px; color: var(--white3); font-weight: 300; line-height: 1.75; margin-bottom: 2rem; }
+.test-rating { display: flex; align-items: center; gap: 0.75rem; }
+.test-stars { color: var(--red); font-size: 18px; letter-spacing: 3px; }
+.test-rating-text { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--white3); }
+.test-right { display: flex; flex-direction: column; gap: 1.5rem; }
+.test-card { background: var(--black3); border: 1px solid var(--border); padding: 2.5rem; position: relative; overflow: hidden; transition: border-color 0.2s; }
+.test-card:hover { border-color: var(--border2); }
+.test-card::before { content: '"'; font-family: var(--display); font-size: 120px; color: var(--red); opacity: 0.1; position: absolute; top: -1rem; left: 1.5rem; line-height: 1; }
+.test-quote { font-size: 16px; line-height: 1.8; color: var(--white2); font-weight: 300; font-style: italic; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+.test-footer { display: flex; align-items: center; justify-content: space-between; }
+.test-author { font-family: var(--cond); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; color: var(--white); text-transform: uppercase; }
+.test-settlement { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--red); }
+
+/* PROCESS */
+.process-bg { background: var(--black); }
+.process-layout { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.process-step { padding: 3rem 2.5rem; border-right: 1px solid var(--border2); position: relative; overflow: hidden; transition: background 0.2s; }
+.process-step:last-child { border-right: none; }
+.process-step:hover { background: var(--black2); }
+.process-step-num { font-family: var(--display); font-size: 100px; color: var(--red); opacity: 0.08; line-height: 1; margin-bottom: -1rem; letter-spacing: 0.02em; }
+.process-step-icon { font-size: 28px; margin-bottom: 1rem; display: block; }
+.process-step-name { font-family: var(--display); font-size: 28px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.75rem; line-height: 1; }
+.process-step-desc { font-size: 13px; line-height: 1.8; color: var(--white3); font-weight: 300; }
+
+/* CONTACT */
+.contact-bg { background: var(--black2); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-heading { font-family: var(--display); font-size: clamp(52px,6vw,90px); line-height: 0.88; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.5rem; }
+.contact-heading span { color: var(--red); display: block; }
+.contact-body { font-size: 15px; color: var(--white3); font-weight: 300; line-height: 1.75; margin-bottom: 2.5rem; }
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
+.cinfo { display: flex; gap: 1rem; align-items: flex-start; }
+.cinfo-icon { width: 40px; height: 40px; background: var(--red3); border: 1px solid var(--red4); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.cinfo-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; color: var(--white3); text-transform: uppercase; margin-bottom: 3px; }
+.cinfo-value { font-family: var(--cond); font-size: 18px; font-weight: 600; color: var(--white); letter-spacing: 0.04em; }
+.no-fee { background: var(--black3); border-left: 3px solid var(--red); padding: 1.5rem 2rem; }
+.no-fee-title { font-family: var(--display); font-size: 24px; letter-spacing: 0.05em; color: var(--red); margin-bottom: 6px; }
+.no-fee-text { font-size: 13px; color: var(--white3); font-weight: 300; line-height: 1.6; }
+.form-wrap { background: var(--black3); border: 1px solid var(--border2); padding: 3rem; }
+.form-title { font-family: var(--display); font-size: 32px; letter-spacing: 0.04em; color: var(--white); margin-bottom: 2rem; }
+.form-group { margin-bottom: 1rem; }
+.form-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white3); display: block; margin-bottom: 6px; }
+.form-input { width: 100%; background: var(--black4); border: 1px solid var(--border2); color: var(--white); font-family: var(--sans); font-size: 14px; padding: 13px 16px; outline: none; transition: border-color 0.15s; font-weight: 300; }
+.form-input:focus { border-color: var(--red); background: var(--black5); }
+.form-input::placeholder { color: var(--white3); }
+textarea.form-input { min-height: 120px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-submit { width: 100%; padding: 18px; background: var(--red); color: var(--white); border: none; font-family: var(--cond); font-size: 15px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem; }
+.form-submit:hover { background: var(--red2); }
+.demo-toast { display: none; background: var(--black5); border: 1px solid var(--red); color: var(--red); padding: 1rem 1.5rem; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-align: center; margin-top: 1rem; }
+.demo-toast.show { display: block; }
+
+/* FOOTER */
+.footer { background: #060606; border-top: 1px solid var(--border); padding: 4rem 3rem 2rem; }
+.footer-inner { max-width: 1300px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+.footer-brand { }
+.footer-name { font-family: var(--display); font-size: 28px; letter-spacing: 0.08em; color: var(--white); }
+.footer-tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; color: var(--red); margin-top: 4px; }
+.footer-body { font-size: 13px; color: var(--white3); font-weight: 300; line-height: 1.7; margin-top: 1rem; }
+.footer-col-title { font-family: var(--cond); font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
+.footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-link { font-size: 13px; color: var(--white3); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-link:hover { color: var(--red); }
+.footer-contact-item { font-size: 13px; color: var(--white3); font-weight: 300; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
+.footer-contact-item span { color: var(--red); }
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+.footer-copy { font-family: var(--mono); font-size: 9px; color: var(--white3); opacity: 0.4; }
+.footer-disclaimer { font-family: var(--mono); font-size: 8px; color: var(--white3); opacity: 0.25; max-width: 700px; line-height: 1.7; letter-spacing: 0.04em; }
+
+/* KODA BADGE */
+.koda-badge { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--black2); border: 1px solid var(--border2); padding: 8px 16px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; color: var(--white3); text-decoration: none; z-index: 999; transition: all 0.15s; }
+.koda-badge:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; height: auto; }
+  .hero-right { height: 300px; }
+  .hero-stats-vert { position: relative; bottom: auto; left: auto; right: auto; margin-top: 0; }
+  .why-layout { grid-template-columns: 1fr; }
+  .test-layout { grid-template-columns: 1fr; }
+  .test-left { position: relative; top: auto; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .nav-links, .nav-phone { display: none; }
+  .attorneys-layout { grid-template-columns: 1fr; }
+  .process-layout { grid-template-columns: 1fr 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .results-featured { grid-template-columns: 1fr; }
+  .results-row { grid-template-columns: 1fr 1fr; }
+  .practice-item { grid-template-columns: 60px 1fr; gap: 1rem; }
+  .practice-desc, .practice-arrow { display: none; }
+  .section { padding: 5rem 1.5rem; }
+  .nav { padding: 0 1.5rem; }
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">⚡ EXAMPLE SITE — Built by <a href="https://kodawebco.com" target="_blank">Koda Web Co</a> · Want one like this? Let's talk.</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-name">HARMON & ASSOCIATES</div>
+    <div class="nav-logo-tag">Personal Injury Attorneys · Est. 1994</div>
+  </div>
+  <div class="nav-links">
+    <a href="#practice" class="nav-link">Practice Areas</a>
+    <a href="#results" class="nav-link">Results</a>
+    <a href="#attorneys" class="nav-link">Attorneys</a>
+    <a href="#testimonials" class="nav-link">Reviews</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-phone">(304) 555-0147</div>
+  <a href="#contact" class="nav-cta">Free Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Personal Injury Attorneys · No Fee Unless We Win</div>
+    <h1 class="hero-title">
+      WE FIGHT.
+      <span class="red">YOU WIN.</span>
+      <span class="outline">PERIOD.</span>
+    </h1>
+    <p class="hero-sub">The insurance companies have attorneys working against you from the moment your accident happens. <strong>So should you.</strong> Harmon & Associates has recovered millions for injured victims. Let us fight for what you're owed.</p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn btn-red">Free Consultation →</a>
+      <a href="#results" class="btn btn-ghost">See Our Results</a>
+    </div>
+    <div class="hero-promises">
+      <div class="promise"><span class="promise-check">✓</span> No Fee Unless We Win</div>
+      <div class="promise"><span class="promise-check">✓</span> Free Case Evaluation</div>
+      <div class="promise"><span class="promise-check">✓</span> Available 24/7</div>
+      <div class="promise"><span class="promise-check">✓</span> 30+ Years Experience</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img"></div>
+    <div class="hero-right-overlay"></div>
+    <div class="hero-stats-vert">
+      <div class="hstat"><div class="hstat-num">$50M+</div><div class="hstat-label">Recovered</div></div>
+      <div class="hstat"><div class="hstat-num">1,200+</div><div class="hstat-label">Cases Won</div></div>
+      <div class="hstat"><div class="hstat-num">30+</div><div class="hstat-label">Years</div></div>
+      <div class="hstat"><div class="hstat-num">98%</div><div class="hstat-label">Success Rate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-item">No Fee Unless We Win</div>
+    <div class="ticker-item">Free Consultation</div>
+    <div class="ticker-item">Available 24/7</div>
+    <div class="ticker-item">$50M+ Recovered</div>
+    <div class="ticker-item">1,200+ Cases Won</div>
+    <div class="ticker-item">Call Now · (304) 555-0147</div>
+    <div class="ticker-item">No Fee Unless We Win</div>
+    <div class="ticker-item">Free Consultation</div>
+    <div class="ticker-item">Available 24/7</div>
+    <div class="ticker-item">$50M+ Recovered</div>
+    <div class="ticker-item">1,200+ Cases Won</div>
+    <div class="ticker-item">Call Now · (304) 555-0147</div>
+  </div>
+</div>
+
+<!-- PRACTICE AREAS -->
+<section class="section practice-bg" id="practice">
+  <div class="section-inner">
+    <div class="section-tag">What We Handle</div>
+    <h2 class="section-heading">PRACTICE<br>AREAS</h2>
+    <p class="section-sub">If someone else's negligence hurt you, we want to hear your story. Here's where we've built our reputation.</p>
+    <div class="practice-list">
+      <div class="practice-item">
+        <div class="practice-num">01</div>
+        <div class="practice-name">CAR ACCIDENTS</div>
+        <div class="practice-desc">Rear-end collisions, drunk drivers, distracted driving — if another driver's negligence hurt you, we hold them accountable and fight for every dollar you deserve.</div>
+        <div class="practice-arrow">→</div>
+      </div>
+      <div class="practice-item">
+        <div class="practice-num">02</div>
+        <div class="practice-name">WORKPLACE INJURIES</div>
+        <div class="practice-desc">Construction accidents, equipment failures, falls. When your employer's negligence takes you off the job, we fight for lost wages, medical bills, and your future.</div>
+        <div class="practice-arrow">→</div>
+      </div>
+      <div class="practice-item">
+        <div class="practice-num">03</div>
+        <div class="practice-name">TRUCK ACCIDENTS</div>
+        <div class="practice-desc">18-wheelers and commercial vehicles mean complex liability. We have the resources to go up against large trucking companies and their well-funded legal teams.</div>
+        <div class="practice-arrow">→</div>
+      </div>
+      <div class="practice-item">
+        <div class="practice-num">04</div>
+        <div class="practice-name">MEDICAL MALPRACTICE</div>
+        <div class="practice-desc">Surgical errors, misdiagnosis, medication mistakes. When healthcare falls below the standard of care, the consequences are life-altering. We make them answer for it.</div>
+        <div class="practice-arrow">→</div>
+      </div>
+      <div class="practice-item">
+        <div class="practice-num">05</div>
+        <div class="practice-name">WRONGFUL DEATH</div>
+        <div class="practice-desc">Losing someone to negligence is devastating. We handle wrongful death cases with the sensitivity your family deserves and the tenacity justice demands.</div>
+        <div class="practice-arrow">→</div>
+      </div>
+      <div class="practice-item">
+        <div class="practice-num">06</div>
+        <div class="practice-name">PREMISES LIABILITY</div>
+        <div class="practice-desc">Slip and falls, unsafe properties, inadequate security. Property owners have a duty to keep people safe. When they fail, we hold them accountable.</div>
+        <div class="practice-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- RESULTS -->
+<section class="section results-bg" id="results">
+  <div class="section-inner">
+    <div class="section-tag">Case Results</div>
+    <h2 class="section-heading">WHAT WE'VE<br>WON FOR YOU.</h2>
+    <p class="section-sub">Numbers speak louder than promises. Past results do not guarantee future outcomes — but they do show what we're capable of.</p>
+    <div class="results-featured">
+      <div class="result-featured-card">
+        <div class="result-label">Trucking Accident · Verdict</div>
+        <div class="result-amount">$4.2M</div>
+        <div class="result-type">Spinal Cord Injury</div>
+        <p class="result-desc">Client was struck by a commercial vehicle running a red light. Permanent spinal damage. We took it to trial and won.</p>
+      </div>
+      <div class="result-featured-card">
+        <div class="result-label">Medical Malpractice · Jury Award</div>
+        <div class="result-amount">$2.1M</div>
+        <div class="result-type">Surgical Error</div>
+        <p class="result-desc">Surgical mistake resulting in permanent nerve damage. The hospital's attorneys fought hard. The jury sided with our client.</p>
+      </div>
+    </div>
+    <div class="results-row">
+      <div class="result-small">
+        <div class="result-small-amount">$1.8M</div>
+        <div class="result-small-type">Workplace Injury</div>
+        <div class="result-small-desc">Construction worker permanently disabled by equipment failure</div>
+      </div>
+      <div class="result-small">
+        <div class="result-small-amount">$975K</div>
+        <div class="result-small-type">Car Accident</div>
+        <div class="result-small-desc">Head-on collision caused by drunk driver — traumatic brain injury</div>
+      </div>
+      <div class="result-small">
+        <div class="result-small-amount">$650K</div>
+        <div class="result-small-type">Wrongful Death</div>
+        <div class="result-small-desc">Family compensated after preventable workplace fatality</div>
+      </div>
+      <div class="result-small">
+        <div class="result-small-amount">$380K</div>
+        <div class="result-small-type">Slip & Fall</div>
+        <div class="result-small-desc">Commercial property with documented prior safety violations</div>
+      </div>
+    </div>
+    <p class="results-disclaimer">Prior results do not guarantee similar outcomes. Every case is evaluated on its own facts and circumstances. Results depend on specific legal claims involved.</p>
+  </div>
+</section>
+
+<!-- WHY US -->
+<div class="why-layout">
+  <div class="why-left">
+    <div class="why-left-tag">// Why Harmon & Associates</div>
+    <div class="why-left-heading">WHY<br>CHOOSE<br>US?</div>
+    <p class="why-left-body">Most personal injury firms settle fast and cheap. We don't. <strong>We go to trial when we have to</strong> — and the insurance companies know it. That reputation alone gets our clients better offers before we ever set foot in a courtroom.</p>
+  </div>
+  <div class="why-right">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-content">
+        <div class="why-name">Former Insurance Defense</div>
+        <p class="why-text">James Harmon spent years on the other side, defending insurance companies. He knows every tactic they use — and how to counter every one of them.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-content">
+        <div class="why-name">We Actually Go To Trial</div>
+        <p class="why-text">Many PI firms never set foot in a courtroom. We do. Insurance companies know this and it changes how they negotiate with us from day one.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-content">
+        <div class="why-name">No Fee Unless You Win</div>
+        <p class="why-text">You pay nothing unless we recover money for you. No upfront costs, no hourly billing. Our interests are completely aligned with yours.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <div class="why-content">
+        <div class="why-name">Personal Attention</div>
+        <p class="why-text">You'll know your attorney's direct line. You'll hear from us regularly. You won't spend months wondering what's happening with your case.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ATTORNEYS -->
+<section class="section" id="attorneys">
+  <div class="section-inner">
+    <div class="section-tag">The Team</div>
+    <h2 class="section-heading">THE ATTORNEYS<br>IN YOUR CORNER.</h2>
+    <p class="section-sub">Combined 45+ years of experience going up against insurance companies, corporations, and negligent parties on behalf of injured people.</p>
+    <div class="attorneys-layout">
+      <div class="attorney-card">
+        <div class="attorney-img-wrap">
+          <img class="attorney-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="James Harmon">
+          <div class="attorney-img-overlay"></div>
+        </div>
+        <div class="attorney-body">
+          <div class="attorney-name">JAMES HARMON</div>
+          <div class="attorney-title">Founding Partner · 30 Years Experience</div>
+          <p class="attorney-bio">A former insurance defense attorney, James knows exactly how the other side thinks — and uses it against them. He has tried over 150 cases to verdict and recovered more than $30M for his clients.</p>
+          <div class="attorney-creds">
+            <span class="attorney-cred-tag">State Bar · 1994</span>
+            <span class="attorney-cred-tag">Super Lawyers</span>
+            <span class="attorney-cred-tag">Top 100 Trial Attorneys</span>
+            <span class="attorney-cred-tag">$30M+ Recovered</span>
+          </div>
+        </div>
+      </div>
+      <div class="attorney-card">
+        <div class="attorney-img-wrap">
+          <img class="attorney-img" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&q=80" alt="Rachel Morales">
+          <div class="attorney-img-overlay"></div>
+        </div>
+        <div class="attorney-body">
+          <div class="attorney-name">RACHEL MORALES</div>
+          <div class="attorney-title">Partner · Medical Malpractice Specialist</div>
+          <p class="attorney-bio">With a background in biomedical science and law, Rachel handles the firm's most complex medical malpractice and catastrophic injury cases. Her technical expertise in the courtroom is unmatched.</p>
+          <div class="attorney-creds">
+            <span class="attorney-cred-tag">State Bar · 2008</span>
+            <span class="attorney-cred-tag">Rising Stars</span>
+            <span class="attorney-cred-tag">B.S. Biomedical Science</span>
+            <span class="attorney-cred-tag">$20M+ Recovered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TESTIMONIALS -->
+<section class="section test-bg" id="testimonials">
+  <div class="section-inner">
+    <div class="test-layout">
+      <div class="test-left">
+        <div class="section-tag">Client Reviews</div>
+        <h2 class="test-left-heading">REAL<br>CLIENTS.<br><span>REAL WINS.</span></h2>
+        <p class="test-left-body">We don't measure success by hours billed. We measure it by outcomes — and by whether our clients feel they were truly fought for.</p>
+        <div class="test-rating">
+          <div class="test-stars">★★★★★</div>
+          <div class="test-rating-text">5.0 · Google Reviews · 200+ Reviews</div>
+        </div>
+      </div>
+      <div class="test-right">
+        <div class="test-card">
+          <p class="test-quote">"After my accident I didn't know where to turn. The insurance company was already calling me trying to get a statement. James Harmon took over everything. I didn't have to deal with a single call after that. I got a settlement I never thought was possible."</p>
+          <div class="test-footer">
+            <div class="test-author">David M.</div>
+            <div class="test-settlement">Car Accident · $225,000</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <p class="test-quote">"James is the real deal. He told me exactly what my case was worth from day one and he delivered. He's aggressive when he needs to be and genuinely cares about his clients. I never once felt like just a case number."</p>
+          <div class="test-footer">
+            <div class="test-author">Patricia K.</div>
+            <div class="test-settlement">Workplace Injury · $410,000</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <p class="test-quote">"Rachel Morales handled our family's case with so much care and professionalism. She explained everything clearly and fought harder than we could have imagined. We are forever grateful for what she did for us."</p>
+          <div class="test-footer">
+            <div class="test-author">The Williams Family</div>
+            <div class="test-settlement">Wrongful Death · Confidential</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROCESS -->
+<section class="section process-bg">
+  <div class="section-inner">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-heading">YOUR CASE.<br>OUR FIGHT.</h2>
+    <p class="section-sub" style="margin-bottom:3rem;">We handle everything. You focus on getting better.</p>
+    <div class="process-layout">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <span class="process-step-icon">📞</span>
+        <div class="process-step-name">FREE CONSULTATION</div>
+        <p class="process-step-desc">Tell us what happened. We review your case at no cost and give you an honest assessment. No pressure, no obligation, no nonsense.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <span class="process-step-icon">🔍</span>
+        <div class="process-step-name">WE INVESTIGATE</div>
+        <p class="process-step-desc">We gather evidence, interview witnesses, retain experts, and build the strongest possible case while you focus on recovering.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <span class="process-step-icon">⚖️</span>
+        <div class="process-step-name">WE NEGOTIATE</div>
+        <p class="process-step-desc">We demand maximum compensation. If they don't pay what you deserve, we take it to trial. They know we're not bluffing.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <span class="process-step-icon">💰</span>
+        <div class="process-step-name">YOU GET PAID</div>
+        <p class="process-step-desc">We only collect when you win. No upfront costs, no hourly fees. Our success is completely tied to yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section class="section contact-bg" id="contact">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <div>
+        <div class="section-tag">Free Consultation</div>
+        <h2 class="contact-heading">
+          DON'T WAIT.
+          <span>CALL NOW.</span>
+        </h2>
+        <p class="contact-body">Evidence disappears. Witnesses forget. Deadlines pass. The sooner you call us the stronger your case. Your consultation is completely free and there's no obligation.</p>
+        <div class="contact-info">
+          <div class="cinfo">
+            <div class="cinfo-icon">📞</div>
+            <div>
+              <div class="cinfo-label">24/7 Hotline</div>
+              <div class="cinfo-value">(304) 555-0147</div>
+            </div>
+          </div>
+          <div class="cinfo">
+            <div class="cinfo-icon">📍</div>
+            <div>
+              <div class="cinfo-label">Office Location</div>
+              <div class="cinfo-value">Charleston, WV — Statewide</div>
+            </div>
+          </div>
+          <div class="cinfo">
+            <div class="cinfo-icon">✉️</div>
+            <div>
+              <div class="cinfo-label">Email</div>
+              <div class="cinfo-value">info@harmonlaw.com</div>
+            </div>
+          </div>
+        </div>
+        <div class="no-fee">
+          <div class="no-fee-title">NO FEE UNLESS WE WIN</div>
+          <p class="no-fee-text">You pay absolutely nothing unless we recover money for you. No upfront costs, no hourly charges. We take the risk so you don't have to.</p>
+        </div>
+      </div>
+      <div class="form-wrap">
+        <div class="form-title">GET YOUR FREE CASE REVIEW</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="(304) 555-0000">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type of Case</label>
+          <select class="form-input">
+            <option>— Select Case Type —</option>
+            <option>Car Accident</option>
+            <option>Workplace Injury</option>
+            <option>Truck Accident</option>
+            <option>Medical Malpractice</option>
+            <option>Wrongful Death</option>
+            <option>Slip & Fall / Premises</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Brief Description</label>
+          <textarea class="form-input" placeholder="Tell us what happened and when the injury occurred..."></textarea>
+        </div>
+        <button type="button" class="form-submit" onclick="showDemo()">Get My Free Consultation →</button>
+        <div class="demo-toast" id="demo-toast">⚡ Demo site by Koda Web Co — a real site would send this directly to the law firm!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">HARMON & ASSOCIATES</div>
+        <div class="footer-tag">Personal Injury Attorneys · Est. 1994</div>
+        <p class="footer-body">Fighting for injured victims across West Virginia for over 30 years. No fee unless we win.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Practice Areas</div>
+        <div class="footer-links">
+          <a href="#practice" class="footer-link">Car Accidents</a>
+          <a href="#practice" class="footer-link">Workplace Injuries</a>
+          <a href="#practice" class="footer-link">Truck Accidents</a>
+          <a href="#practice" class="footer-link">Medical Malpractice</a>
+          <a href="#practice" class="footer-link">Wrongful Death</a>
+          <a href="#practice" class="footer-link">Premises Liability</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><span>📞</span> (304) 555-0147</div>
+        <div class="footer-contact-item"><span>✉️</span> info@harmonlaw.com</div>
+        <div class="footer-contact-item"><span>📍</span> Charleston, WV</div>
+        <div class="footer-contact-item"><span>🕐</span> Available 24/7</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Harmon & Associates · All Rights Reserved</div>
+      <div class="footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. Attorney advertising. Harmon & Associates is a fictional firm created for demonstration purposes by Koda Web Co.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://kodawebco.com" target="_blank" class="koda-badge">Built by Koda Web Co</a>
+
+<script>
+function showDemo() {
+  document.getElementById('demo-toast').classList.add('show');
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var t = document.querySelector(this.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
